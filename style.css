@@ -1,6 +1,6 @@
 body {
-    background-color: #fff0f5; /* Fundo rosa bem claro e delicado */
-    color: #4a3e43;            /* Texto num tom escuro suave para contrastar bem */
+    background-color: #fff0f5;
+    color: #4a3e43;
     text-align: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -18,7 +18,7 @@ h2 {
     margin-top: 40px;
 }
 
-/* Barra de Pesquisa Rosa Claro */
+/* Barra de Pesquisa */
 .caixa-pesquisa {
     margin: 20px auto 40px auto;
 }
@@ -35,10 +35,6 @@ h2 {
     box-shadow: 0 4px 10px rgba(248, 187, 208, 0.3);
 }
 
-.barra-busca::placeholder {
-    color: #ce93d8;
-}
-
 .botao-busca {
     padding: 12px 22px;
     border-radius: 25px;
@@ -52,56 +48,77 @@ h2 {
     box-shadow: 0 4px 10px rgba(244, 143, 177, 0.4);
 }
 
-/* Vídeos com Borda Rosa Claro */
+/* Estrutura do Card de Cada Música */
+.card-musica {
+    display: inline-block;
+    margin: 20px;
+    vertical-align: top;
+}
+
 iframe {
-    width: 80%;
-    max-width: 560px;
-    height: 315px;
+    width: 320px;
+    height: 200px;
     border-radius: 22px;
     border: 4px solid #f8bbd0;
-    margin: 15px 0;
     box-shadow: 0 8px 20px rgba(248, 187, 208, 0.4);
 }
 
-/* Área de Curtir e Comentar */
+/* Área de Interação Individual */
 .interacao {
-    margin: 10px auto 30px auto;
-    max-width: 500px;
-    padding: 10px;
+    margin-top: 10px;
+    width: 320px;
 }
 
 .botao-curtir {
     background-color: #f48fb1;
     color: white;
     border: none;
-    padding: 10px 22px;
+    padding: 8px 16px;
     border-radius: 20px;
     font-weight: bold;
     cursor: pointer;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
     box-shadow: 0 4px 8px rgba(244, 143, 177, 0.3);
 }
 
+.comentarios {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+}
+
 .campo-comentario {
-    padding: 10px 15px;
+    padding: 8px 12px;
     border-radius: 18px;
     border: 1.5px solid #f8bbd0;
     background-color: #ffffff;
     color: #5a4b51;
-    width: 60%;
+    width: 65%;
     outline: none;
-}
-
-.campo-comentario::placeholder {
-    color: #d1c4e9;
 }
 
 .botao-enviar {
     background-color: #f8bbd0;
     color: #4a3e43;
     border: none;
-    padding: 10px 18px;
+    padding: 8px 12px;
     border-radius: 18px;
     font-weight: bold;
     cursor: pointer;
+}
+
+/* Exibição dos Comentários Feitos */
+.lista-comentarios {
+    margin-top: 10px;
+    text-align: left;
+}
+
+.item-comentario {
+    background-color: #ffffff;
+    padding: 8px 12px;
+    border-radius: 12px;
+    border: 1px solid #f8bbd0;
+    font-size: 13px;
+    margin: 5px 0;
+    word-break: break-word;
 }
