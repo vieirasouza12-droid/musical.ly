@@ -1,9 +1,54 @@
-body{
-    background-color: rgb(247, 153, 169)
+body {
+    background-color: #121212;
+    color: white;
+    text-align: center;
+    font-family: sans-serif;
 }
 
+h1 {
+    color: #ff4081;
+    font-size: 80px;
+}
 
-h1{
-    color: hotpink;
-    font-size: 100px;
+h2 {
+    color: #ff80ab;
+    font-size: 40px;
+    margin-top: 40px;
+}
+
+/* Estilo para a área de curtir e comentar */
+.interacao {
+    margin: 15px auto 40px auto;
+    max-width: 500px;
+    padding: 10px;
+}
+
+.botao-curtir {
+    background-color: #ff4081;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.campo-comentario {
+    padding: 10px;
+    border-radius: 15px;
+    border: 1px solid #333;
+    background-color: #242424;
+    color: white;
+    width: 60%;
+}
+
+.botao-enviar {
+    background-color: #ff80ab;
+    color: black;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 15px;
+    font-weight: bold;
+    cursor: pointer;
 }
