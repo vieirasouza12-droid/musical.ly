@@ -1,124 +1,455 @@
-body {
-    background-color: #fff0f5;
-    color: #4a3e43;
-    text-align: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+<!DOCTYPE html>
+<html lang="pt-br">
 
-h1 {
-    color: #f48fb1;
-    font-size: 70px;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(244, 143, 177, 0.2);
-}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>musical.ly</title>
+</head>
 
-h2 {
-    color: #f06292;
-    font-size: 36px;
-    margin-top: 40px;
-}
+<body>
+  <h1>🎵 musical.ly 🎵</h1>
 
-/* Barra de Pesquisa */
-.caixa-pesquisa {
-    margin: 20px auto 40px auto;
-}
+  <!-- Barra de Pesquisa Rosa Claro -->
+  <div class="caixa-pesquisa">
+    <input type="search" class="barra-busca" placeholder="Pesquise por Funk, Sertanejo, Pop...">
+    <button class="botao-busca">🔍 Buscar</button>
+  </div>
 
-.barra-busca {
-    padding: 12px 20px;
-    width: 260px;
-    border-radius: 25px;
-    border: 2px solid #f8bbd0;
-    background-color: #ffffff;
-    color: #5a4b51;
-    font-size: 15px;
-    outline: none;
-    box-shadow: 0 4px 10px rgba(248, 187, 208, 0.3);
-}
+  <h2>🔥 Funk</h2>
 
-.botao-busca {
-    padding: 12px 22px;
-    border-radius: 25px;
-    border: none;
-    background-color: #f48fb1;
-    color: white;
-    font-weight: bold;
-    font-size: 15px;
-    cursor: pointer;
-    margin-left: 8px;
-    box-shadow: 0 4px 10px rgba(244, 143, 177, 0.4);
-}
+  <div class="card-musica">
+    <iframe src="https://www.youtube.com/embed/TQ5DUv_ZwRg?list=RDTQ5DUv_ZwRg"
+      title="Acústico 1Kilo - Deixe-me Ir" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen></iframe>
+    <div class="interacao">
+      <button class="botao-curtir" onclick="curtir(this)">❤️ <span class="contador">0</span> Curtidas</button>
+      <div class="comentarios">
+        <input type="text" class="campo-comentario" placeholder="Escreva um comentário...">
+        <button class="botao-enviar" onclick="adicionarComentario(this)">Comentar</button>
+      </div>
+      <div class="lista-comentarios"></div>
+    </div>
+  </div>
 
-/* Estrutura do Card de Cada Música */
-.card-musica {
-    display: inline-block;
-    margin: 20px;
-    vertical-align: top;
-}
+  <div class="card-musica">
+    <iframe src="https://www.youtube.com/embed/nNHVTuST8eA?list=RDnNHVTuST8eA"
+      title="Cuida do Pet" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen></iframe>
+    <div class="interacao">
+      <button class="botao-curtir" onclick="curtir(this)">❤️ <span class="contador">0</span> Curtidas</button>
+      <div class="comentarios">
+        <input type="text" class="campo-comentario" placeholder="Escreva um comentário...">
+        <button class="botao-enviar" onclick="adicionarComentario(this)">Comentar</button>
+      </div>
+      <div class="lista-comentarios"></div>
+    </div>
+  </div>
 
-iframe {
-    width: 320px;
-    height: 200px;
-    border-radius: 22px;
-    border: 4px solid #f8bbd0;
-    box-shadow: 0 8px 20px rgba(248, 187, 208, 0.4);
-}
+  <div class="card-musica">
+    <iframe src="https://www.youtube.com/embed/DKfSkkIU3po?list=RDDKfSkkIU3po"
+      title="Mente Barulhenta" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen></iframe>
+    <div class="interacao">
+      <button class="botao-curtir" onclick="curtir(this)">❤️ <span class="contador">0</span> Curtidas</button>
+      <div class="comentarios">
+        <input type="text" class="campo-comentario" placeholder="Escreva um comentário...">
+        <button class="botao-enviar" onclick="adicionarComentario(this)">Comentar</button>
+      </div>
+      <div class="lista-comentarios"></div>
+    </div>
+  </div>
 
-/* Área de Interação Individual */
-.interacao {
-    margin-top: 10px;
-    width: 320px;
-}
+  <div class="card-musica">
+    <iframe src="https://www.youtube.com/embed/n5F4s8hEMQk?list=RDn5F4s8hEMQk"
+      title="GRWM - Mc Iguinho CT" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen></iframe>
+    <div class="interacao">
+      <button class="botao-curtir" onclick="curtir(this)">❤️ <span class="contador">0</span> Curtidas</button>
+      <div class="comentarios">
+        <input type="text" class="campo-comentario" placeholder="Escreva um comentário...">
+        <button class="botao-enviar" onclick="adicionarComentario(this)">Comentar</button>
+      </div>
+      <div class="lista-comentarios"></div>
+    </div>
+  </div>
 
-.botao-curtir {
-    background-color: #f48fb1;
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-weight: bold;
-    cursor: pointer;
-    margin-bottom: 10px;
-    box-shadow: 0 4px 8px rgba(244, 143, 177, 0.3);
-}
+  <div class="card-musica">
+    <iframe src="https://www.youtube.com/embed/XpWQQkzBg90?list=RDXpWQQkzBg90"
+      title="COMEDINHA FICOU BRAVO" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen></iframe>
+    <div class="interacao">
+      <button class="botao-curtir" onclick="curtir(this)">❤️ <span class="contador">0</span> Curtidas</button>
+      <div class="comentarios">
+        <input type="text" class="campo-comentario" placeholder="Escreva um comentário...">
+        <button class="botao-enviar" onclick="adicionarComentario(this)">Comentar</button>
+      </div>
+      <div class="lista-comentarios"></div>
+    </div>
+  </div>
 
-.comentarios {
-    display: flex;
-    gap: 5px;
-    justify-content: center;
-}
+  <div class="card-musica">
+    <iframe src="https://www.youtube.com/embed/PLE_iSZTw3A?list=RDPLE_iSZTw3A"
+      title="MEDLEY DE IGARATÁ 3" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen></iframe>
+    <div class="interacao">
+      <button class="botao-curtir" onclick="curtir(this)">❤️ <span class="contador">0</span> Curtidas</button>
+      <div class="comentarios">
+        <input type="text" class="campo-comentario" placeholder="Escreva um comentário...">
+        <button class="botao-enviar" onclick="adicionarComentario(this)">Comentar</button>
+      </div>
+      <div class="lista-comentarios"></div>
+    </div>
+  </div>
 
-.campo-comentario {
-    padding: 8px 12px;
-    border-radius: 18px;
-    border: 1.5px solid #f8bbd0;
-    background-color: #ffffff;
-    color: #5a4b51;
-    width: 65%;
-    outline: none;
-}
+  <div class="card-musica">
+    <iframe src="https://www.youtube.com/embed/Wh9apdrQ-bg?list=RDWh9apdrQ-bg"
+      title="VOU PELA MADRUGADA" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen></iframe>
+    <div class="interacao">
+      <button class="botao-curtir" onclick="curtir(this)">❤️ <span class="contador">0</span> Curtidas</button>
+      <div class="comentarios">
+        <input type="text" class="campo-comentario" placeholder="Escreva um comentário...">
+        <button class="botao-enviar" onclick="adicionarComentario(this)">Comentar</button>
+      </div>
+      <div class="lista-comentarios"></div>
+    </div>
+  </div>
 
-.botao-enviar {
-    background-color: #f8bbd0;
-    color: #4a3e43;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 18px;
-    font-weight: bold;
-    cursor: pointer;
-}
+  <div class="card-musica">
+    <iframe src="https://www.youtube.com/embed/2tDL-7w3owY?list=PLrlWZF8W0Xm5aEYHrMApU_CkJH9lwIuWh"
+      title="Gauchinha" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen></iframe>
+    <div class="interacao">
+      <button class="botao-curtir" onclick="curtir(this)">❤️ <span class="contador">0</span> Curtidas</button>
+      <div class="comentarios">
+        <input type="text" class="campo-comentario" placeholder="Escreva um comentário...">
+        <button class="botao-enviar" onclick="adicionarComentario(this)">Comentar</button>
+      </div>
+      <div class="lista-comentarios"></div>
+    </div>
+  </div>
 
-/* Exibição dos Comentários Feitos */
-.lista-comentarios {
-    margin-top: 10px;
-    text-align: left;
-}
+  <div class="card-musica">
+    <iframe src="https://www.youtube.com/embed/6MNxuMgg58k?list=RD6MNxuMgg58k"
+      title="DJ Matt-D - Pandora" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen></iframe>
+    <div class="interacao">
+      <button class="botao-curtir" onclick="curtir(this)">❤️ <span class="contador">0</span> Curtidas</button>
+      <div class="comentarios">
+        <input type="text" class="campo-comentario" placeholder="Escreva um comentário...">
+        <button class="botao-enviar" onclick="adicionarComentario(this)">Comentar</button>
+      </div>
+      <div class="lista-comentarios"></div>
+    </div>
+  </div>
 
-.item-comentario {
-    background-color: #ffffff;
-    padding: 8px 12px;
-    border-radius: 12px;
-    border: 1px solid #f8bbd0;
-    font-size: 13px;
-    margin: 5px 0;
-    word-break: break-word;
-}
+  <h2>🤠 Sertanejo</h2>
+
+  <div class="card-musica">
+    <iframe src="https://www.youtube.com/embed/uPLztx0LcYA?list=RDuPLztx0LcYA"
+      title="Luan Santana - Garotas Não Merecem Chorar" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen></iframe>
+    <div class="interacao">
+      <button class="botao-curtir" onclick="curtir(this)">❤️ <span class="contador">0</span> Curtidas</button>
+      <div class="comentarios">
+        <input type="text" class="campo-comentario" placeholder="Escreva um comentário...">
+        <button class="botao-enviar" onclick="adicionarComentario(this)">Comentar</button>
+      </div>
+      <div class="lista-comentarios"></div>
+    </div>
+  </div>
+
+  <div class="card-musica">
+    <iframe src="https://www.youtube.com/embed/AiKgpTaBwFk?list=RDAiKgpTaBwFk"
+      title="Marcos e Belutti - Eu Era" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen></iframe>
+    <div class="interacao">
+      <button class="botao-curtir" onclick="curtir(this)">❤️ <span class="contador">0</span> Curtidas</button>
+      <div class="comentarios">
+        <input type="text" class="campo-comentario" placeholder="Escreva um comentário...">
+        <button class="botao-enviar" onclick="adicionarComentario(this)">Comentar</button>
+      </div>
+      <div class="lista-comentarios"></div>
+    </div>
+  </div>
+
+  <div class="card-musica">
+    <iframe src="https://www.youtube.com/embed/Ack_3EAZLlE?list=RDAck_3EAZLlE"
+      title="Marcos & Belutti - Romântico Anônimo" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen></iframe>
+    <div class="interacao">
+      <button class="botao-curtir" onclick="curtir(this)">❤️ <span class="contador">0</span> Curtidas</button>
+      <div class="comentarios">
+        <input type="text" class="campo-comentario" placeholder="Escreva um comentário...">
+        <button class="botao-enviar" onclick="adicionarComentario(this)">Comentar</button>
+      </div>
+      <div class="lista-comentarios"></div>
+    </div>
+  </div>
+
+  <div class="card-musica">
+    <iframe src="https://www.youtube.com/embed/DULQudMe7vA?list=RDDULQudMe7vA"
+      title="Victor & Leo - Na Linha do Tempo" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen></iframe>
+    <div class="interacao">
+      <button class="botao-curtir" onclick="curtir(this)">❤️ <span class="contador">0</span> Curtidas</button>
+      <div class="comentarios">
+        <input type="text" class="campo-comentario" placeholder="Escreva um comentário...">
+        <button class="botao-enviar" onclick="adicionarComentario(this)">Comentar</button>
+      </div>
+      <div class="lista-comentarios"></div>
+    </div>
+  </div>
+
+  <div class="card-musica">
+    <iframe src="https://www.youtube.com/embed/BQk_dmH-Byw?list=RDBQk_dmH-Byw"
+      title="Di Paullo & Paulino - No Céu dos Braços Teus" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen></iframe>
+    <div class="interacao">
+      <button class="botao-curtir" onclick="curtir(this)">❤️ <span class="contador">0</span> Curtidas</button>
+      <div class="comentarios">
+        <input type="text" class="campo-comentario" placeholder="Escreva um comentário...">
+        <button class="botao-enviar" onclick="adicionarComentario(this)">Comentar</button>
+      </div>
+      <div class="lista-comentarios"></div>
+    </div>
+  </div>
+
+  <div class="card-musica">
+    <iframe src="https://www.youtube.com/embed/n7RoCG6O0Ew?list=RDn7RoCG6O0Ew"
+      title="Zezé Di Camargo & Luciano - Irmão da Lua" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen></iframe>
+    <div class="interacao">
+      <button class="botao-curtir" onclick="curtir(this)">❤️ <span class="contador">0</span> Curtidas</button>
+      <div class="comentarios">
+        <input type="text" class="campo-comentario" placeholder="Escreva um comentário...">
+        <button class="botao-enviar" onclick="adicionarComentario(this)">Comentar</button>
+      </div>
+      <div class="lista-comentarios"></div>
+    </div>
+  </div>
+
+  <div class="card-musica">
+    <iframe src="https://www.youtube.com/embed/kI6ywewtYkc?list=RDkI6ywewtYkc"
+      title="Panda - Eu te seguro" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen></iframe>
+    <div class="interacao">
+      <button class="botao-curtir" onclick="curtir(this)">❤️ <span class="contador">0</span> Curtidas</button>
+      <div class="comentarios">
+        <input type="text" class="campo-comentario" placeholder="Escreva um comentário...">
+        <button class="botao-enviar" onclick="adicionarComentario(this)">Comentar</button>
+      </div>
+      <div class="lista-comentarios"></div>
+    </div>
+  </div>
+
+  <div class="card-musica">
+    <iframe src="https://www.youtube.com/embed/9twawF0okH4?list=RD9twawF0okH4"
+      title="Matheus & Kauan - A Nossa Praia" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen></iframe>
+    <div class="interacao">
+      <button class="botao-curtir" onclick="curtir(this)">❤️ <span class="contador">0</span> Curtidas</button>
+      <div class="comentarios">
+        <input type="text" class="campo-comentario" placeholder="Escreva um comentário...">
+        <button class="botao-enviar" onclick="adicionarComentario(this)">Comentar</button>
+      </div>
+      <div class="lista-comentarios"></div>
+    </div>
+  </div>
+
+  <div class="card-musica">
+    <iframe src="https://www.youtube.com/embed/UxB-zF4wGUU?list=RDUxB-zF4wGUU"
+      title="Henrique & Juliano - Cuida Bem Dela" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen></iframe>
+    <div class="interacao">
+      <button class="botao-curtir" onclick="curtir(this)">❤️ <span class="contador">0</span> Curtidas</button>
+      <div class="comentarios">
+        <input type="text" class="campo-comentario" placeholder="Escreva um comentário...">
+        <button class="botao-enviar" onclick="adicionarComentario(this)">Comentar</button>
+      </div>
+      <div class="lista-comentarios"></div>
+    </div>
+  </div>
+
+  <h2>✨ Pop</h2>
+
+  <div class="card-musica">
+    <iframe src="https://www.youtube.com/embed/3yy-dKTmyOo?list=RD3yy-dKTmyOo"
+      title="Milo Manheim, Meg Donnelly - Someday" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen></iframe>
+    <div class="interacao">
+      <button class="botao-curtir" onclick="curtir(this)">❤️ <span class="contador">0</span> Curtidas</button>
+      <div class="comentarios">
+        <input type="text" class="campo-comentario" placeholder="Escreva um comentário...">
+        <button class="botao-enviar" onclick="adicionarComentario(this)">Comentar</button>
+      </div>
+      <div class="lista-comentarios"></div>
+    </div>
+  </div>
+
+  <div class="card-musica">
+    <iframe src="https://www.youtube.com/embed/Bag1gUxuU0g?list=RDBag1gUxuU0g"
+      title="Lana Del Rey - Born To Die" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen></iframe>
+    <div class="interacao">
+      <button class="botao-curtir" onclick="curtir(this)">❤️ <span class="contador">0</span> Curtidas</button>
+      <div class="comentarios">
+        <input type="text" class="campo-comentario" placeholder="Escreva um comentário...">
+        <button class="botao-enviar" onclick="adicionarComentario(this)">Comentar</button>
+      </div>
+      <div class="lista-comentarios"></div>
+    </div>
+  </div>
+
+  <div class="card-musica">
+    <iframe src="https://www.youtube.com/embed/AE005nZeF-A?list=RDAE005nZeF-A"
+      title="Frank Ocean - Ivy" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen></iframe>
+    <div class="interacao">
+      <button class="botao-curtir" onclick="curtir(this)">❤️ <span class="contador">0</span> Curtidas</button>
+      <div class="comentarios">
+        <input type="text" class="campo-comentario" placeholder="Escreva um comentário...">
+        <button class="botao-enviar" onclick="adicionarComentario(this)">Comentar</button>
+      </div>
+      <div class="lista-comentarios"></div>
+    </div>
+  </div>
+
+  <div class="card-musica">
+    <iframe src="https://www.youtube.com/embed/8M_-aaZUs4o?list=RD8M_-aaZUs4o"
+      title="Love" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen></iframe>
+    <div class="interacao">
+      <button class="botao-curtir" onclick="curtir(this)">❤️ <span class="contador">0</span> Curtidas</button>
+      <div class="comentarios">
+        <input type="text" class="campo-comentario" placeholder="Escreva um comentário...">
+        <button class="botao-enviar" onclick="adicionarComentario(this)">Comentar</button>
+      </div>
+      <div class="lista-comentarios"></div>
+    </div>
+  </div>
+
+  <div class="card-musica">
+    <iframe src="https://www.youtube.com/embed/7hCdjhQ1_Gc?list=RD7hCdjhQ1_Gc"
+      title="Black Beatles" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen></iframe>
+    <div class="interacao">
+      <button class="botao-curtir" onclick="curtir(this)">❤️ <span class="contador">0</span> Curtidas</button>
+      <div class="comentarios">
+        <input type="text" class="campo-comentario" placeholder="Escreva um comentário...">
+        <button class="botao-enviar" onclick="adicionarComentario(this)">Comentar</button>
+      </div>
+      <div class="lista-comentarios"></div>
+    </div>
+  </div>
+
+  <div class="card-musica">
+    <iframe src="https://www.youtube.com/embed/8MvGyEb43-M?list=RD8MvGyEb43-M"
+      title="goosebumps" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen></iframe>
+    <div class="interacao">
+      <button class="botao-curtir" onclick="curtir(this)">❤️ <span class="contador">0</span> Curtidas</button>
+      <div class="comentarios">
+        <input type="text" class="campo-comentario" placeholder="Escreva um comentário...">
+        <button class="botao-enviar" onclick="adicionarComentario(this)">Comentar</button>
+      </div>
+      <div class="lista-comentarios"></div>
+    </div>
+  </div>
+
+  <div class="card-musica">
+    <iframe src="https://www.youtube.com/embed/_R2LiwXtuLQ?list=RD_R2LiwXtuLQ"
+      title="SZA - Normal Girl" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen></iframe>
+    <div class="interacao">
+      <button class="botao-curtir" onclick="curtir(this)">❤️ <span class="contador">0</span> Curtidas</button>
+      <div class="comentarios">
+        <input type="text" class="campo-comentario" placeholder="Escreva um comentário...">
+        <button class="botao-enviar" onclick="adicionarComentario(this)">Comentar</button>
+      </div>
+      <div class="lista-comentarios"></div>
+    </div>
+  </div>
+
+  <div class="card-musica">
+    <iframe src="https://www.youtube.com/embed/1aokooixKIo?list=RD1aokooixKIo"
+      title="Sparks" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen></iframe>
+    <div class="interacao">
+      <button class="botao-curtir" onclick="curtir(this)">❤️ <span class="contador">0</span> Curtidas</button>
+      <div class="comentarios">
+        <input type="text" class="campo-comentario" placeholder="Escreva um comentário...">
+        <button class="botao-enviar" onclick="adicionarComentario(this)">Comentar</button>
+      </div>
+      <div class="lista-comentarios"></div>
+    </div>
+  </div>
+
+  <div class="card-musica">
+    <iframe src="https://www.youtube.com/embed/UEBPTUbpLoY?list=RDUEBPTUbpLoY"
+      title="Futile Devices" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen></iframe>
+    <div class="interacao">
+      <button class="botao-curtir" onclick="curtir(this)">❤️ <span class="contador">0</span> Curtidas</button>
+      <div class="comentarios">
+        <input type="text" class="campo-comentario" placeholder="Escreva um comentário...">
+        <button class="botao-enviar" onclick="adicionarComentario(this)">Comentar</button>
+      </div>
+      <div class="lista-comentarios"></div>
+    </div>
+  </div>
+
+  <!-- Script JavaScript -->
+  <script>
+    function curtir(botao) {
+      let contadorSpan = botao.querySelector('.contador');
+      let curtidasAtuais = parseInt(contadorSpan.textContent);
+      contadorSpan.textContent = curtidasAtuais + 1;
+    }
+
+    function adicionarComentario(botao) {
+      let divInteracao = botao.parentElement.parentElement;
+      let campoTexto = divInteracao.querySelector('.campo-comentario');
+      let listaComentarios = divInteracao.querySelector('.lista-comentarios');
+
+      if (campoTexto.value.trim() !== "") {
+        let novoComentario = document.createElement('p');
+        novoComentario.className = 'item-comentario';
+        novoComentario.textContent = campoTexto.value;
+        listaComentarios.appendChild(novoComentario);
+        campoTexto.value = "";
+      }
+    }
+  </script>
+</body>
+
+</html>
